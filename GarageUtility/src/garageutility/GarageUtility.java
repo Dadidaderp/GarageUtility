@@ -15,7 +15,8 @@ public class GarageUtility {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ClientView cv = new ClientView();
+        cv.setVisible(true);
     }
     
 }
