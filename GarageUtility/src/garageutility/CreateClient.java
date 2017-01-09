@@ -166,6 +166,10 @@ public class CreateClient extends javax.swing.JFrame {
        System.out.println("AJOUT D'UN CLIENT EN BASE.");
        Requetes rqt = new Requetes();
        rqt.AddClient(name, fName, adress, mail, tel);
+       
+        // Affiche fenêtre de confirmation
+        AjoutClientOK cw = new AjoutClientOK();
+        cw.setVisible(true);
     }//GEN-LAST:event_jTextFieldNameActionPerformed
 
     // Bouton Retour

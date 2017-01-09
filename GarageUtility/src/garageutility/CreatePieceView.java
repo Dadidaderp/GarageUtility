@@ -124,7 +124,11 @@ public class CreatePieceView extends javax.swing.JFrame {
         rqt.AddPiece(nom, date);
        } catch (Exception e){
            e.printStackTrace();
-       }
+       } finally {
+        // Affiche fenêtre de confirmation
+         AjoutPieceOK cw = new AjoutPieceOK();
+         cw.setVisible(true);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

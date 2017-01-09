@@ -146,6 +146,10 @@ public class CreateCar extends javax.swing.JFrame {
         rqt.AddVehicule(immat, marque, modele);
        } catch (Exception e){
            e.printStackTrace();
+       } finally {
+            // Affiche fenêtre de confirmation
+            AjoutVehiculeOK cw = new AjoutVehiculeOK();
+            cw.setVisible(true);
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
