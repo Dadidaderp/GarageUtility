@@ -12,11 +12,17 @@ package Entite;
 public class Piece {
     
     String denomination = null;
-    String datePose = null;
+    int datePose = 0;
     
-    public Piece(String denomination, String datePose) {
+    public Piece(String denomination, int datePose) {
         
         this.denomination = denomination;
         this.datePose = datePose;
+    }
+    
+    public String addPiece(){
+        
+        String rqt = "INSERT INTO piece(denomination, datePose) VALUES ('"+this.denomination+"', '"+this.datePose+"')";
+        return rqt;
     }
 }

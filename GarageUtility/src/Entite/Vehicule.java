@@ -24,7 +24,7 @@ public class Vehicule {
     
     public String addVehicule(){
         
-        String rqt = "INSERT INTO Vehicule(Immatriculation, Marque, Modele) VALUES ('"+this.immatriculation+"', '"+this.marque+"', '"+this.modele+"')";
+        String rqt = "INSERT INTO vehicule(immatriculation, marque, modele) VALUES ('"+this.immatriculation+"', '"+this.marque+"', '"+this.modele+"')";
         return rqt;
     }
 }

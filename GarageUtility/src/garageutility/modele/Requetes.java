@@ -6,6 +6,7 @@
 package garageutility.modele;
 
 import Entite.Client;
+import Entite.Piece;
 import Entite.Vehicule;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -47,15 +48,15 @@ public class Requetes {
   }
     
     // Ajout d'un Vehicule en base
-    public Vehicule AddVehicule(String Immatriculation, String Marque, String Modele) throws SQLException {
-        
-        Statement state = null;
+    public Vehicule AddVehicule(String Immatriculation, String Marque, String Modele){
         
         // Instancier classe Vehicule
-        Vehicule vehicule = new Vehicule(Immatriculation, Marque, Modele);
+        Vehicule vh = new Vehicule(Immatriculation, Marque, Modele);
         try {
+            DBconnect();
+            Statement state = null;
             state = this.conn.createStatement();
-            String query = vehicule.addVehicule();
+            String query = vh.addVehicule();
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();
@@ -64,7 +65,7 @@ public class Requetes {
     }
     
     // Ajout d'un Client en base
-    public Client AddClient(String nom, String prenom, String adresse, String mail, String tel) {
+    public Client AddClient(String nom, String prenom, String adresse, String mail, String tel){
         
         //Instancier classe Client
         Client cl = new Client(nom, prenom, adresse, mail, tel);
@@ -73,6 +74,23 @@ public class Requetes {
             Statement state = null;
             state = conn.createStatement();
             String query = cl.addClient();
+            state.executeUpdate(query);
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    // Ajout d'une Piece en base
+    public Piece AddPiece(String denom, int date){
+        
+        //Instancier classe Piece
+        Piece pc = new Piece(denom, date);
+        try {
+            DBconnect();
+            Statement state = null;
+            state = conn.createStatement();
+            String query = pc.addPiece();
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();

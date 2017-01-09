@@ -156,11 +156,13 @@ public class CreateClient extends javax.swing.JFrame {
        String adress = null;
        String mail = null;
        String tel = null;
+       
        name = jTextFieldName.getText();
        fName = jTextFieldFirstName.getText();
        adress = jTextFieldAdress.getText();
        mail = jTextFieldMail.getText();
        tel = jTextFieldTel.getText();
+       
        System.out.println("AJOUT D'UN CLIENT EN BASE.");
        Requetes rqt = new Requetes();
        rqt.AddClient(name, fName, adress, mail, tel);

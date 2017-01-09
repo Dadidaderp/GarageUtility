@@ -124,7 +124,10 @@ public class ClientView extends javax.swing.JFrame {
     }//GEN-LAST:event_CreateActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+     // TODO add your handling code here:
+     CreateCar cr = new CreateCar();
+        cr.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
