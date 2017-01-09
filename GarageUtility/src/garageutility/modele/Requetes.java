@@ -82,7 +82,7 @@ public class Requetes {
     }
     
     // Ajout d'une Piece en base
-    public Piece AddPiece(String denom, int date){
+    public Piece AddPiece(String denom, String date){
         
         //Instancier classe Piece
         Piece pc = new Piece(denom, date);
