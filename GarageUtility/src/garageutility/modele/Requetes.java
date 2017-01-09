@@ -60,9 +60,17 @@ public class Requetes {
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();
+        } finally {
+            if ( conn != null )
+                try {
+                    // Fermeture de la connexion
+                    conn.close();
+                } catch ( SQLException ignore ) {
+
+                }
+                return null;
+            }
         }
-        return null;
-    }
     
     // Ajout d'un Client en base
     public Client AddClient(String nom, String prenom, String adresse, String mail, String tel){
@@ -77,9 +85,17 @@ public class Requetes {
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();
+        } finally {
+            if ( conn != null )
+                try {
+                    // Fermeture de la connexion
+                    conn.close();
+                } catch ( SQLException ignore ) {
+
+                }
+                return null;
+            }
         }
-        return null;
-    }
     
     // Ajout d'une Piece en base
     public Piece AddPiece(String denom, String date){
@@ -95,6 +111,15 @@ public class Requetes {
         } catch(SQLException e) {
             e.printStackTrace();
         }
-        return null;
-    }
+        finally {
+            if ( conn != null )
+                try {
+                    // Fermeture de la connexion
+                    conn.close();
+                } catch ( SQLException ignore ) {
+
+                }
+                return null;
+            }
+        }
 }
