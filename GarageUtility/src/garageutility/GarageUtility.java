@@ -5,7 +5,7 @@
  */
 package garageutility;
 
-import garageutility.modele.DBconnect;
+import garageutility.modele.Requetes;
 
 /**
  *
@@ -17,7 +17,6 @@ public class GarageUtility {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        DBconnect db = new DBconnect();
         ClientView cv = new ClientView();
         cv.setVisible(true);
     }

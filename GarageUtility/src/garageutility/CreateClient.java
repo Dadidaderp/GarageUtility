@@ -5,6 +5,11 @@
  */
 package garageutility;
 
+import garageutility.modele.Requetes;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author marclauze
@@ -64,6 +69,11 @@ public class CreateClient extends javax.swing.JFrame {
         jLabel6.setText("Téléphone:");
 
         jButton1.setText("Valider");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Retour");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -140,17 +150,34 @@ public class CreateClient extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
+      
        String name = null;
-        name = jTextFieldName.getText();
-        System.out.println(name);
+       String fName = null;
+       String adress = null;
+       String mail = null;
+       String tel = null;
+       name = jTextFieldName.getText();
+       fName = jTextFieldFirstName.getText();
+       adress = jTextFieldAdress.getText();
+       mail = jTextFieldMail.getText();
+       tel = jTextFieldTel.getText();
+       System.out.println("AJOUT D'UN CLIENT EN BASE.");
+       Requetes rqt = new Requetes();
+       rqt.AddClient(name, fName, adress, mail, tel);
     }//GEN-LAST:event_jTextFieldNameActionPerformed
 
+    // Bouton Retour
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         ClientView cw = new ClientView();
         this.setVisible(false);
         cw.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    // Bouton Valider
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jTextFieldNameActionPerformed(evt);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

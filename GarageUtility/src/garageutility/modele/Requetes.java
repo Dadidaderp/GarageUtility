@@ -5,40 +5,78 @@
  */
 package garageutility.modele;
 
+import Entite.Client;
+import Entite.Vehicule;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  *
  * @author marclauze
  */
 
 // Classe spécifique aux requetes avec la base.
-public abstract class Requetes {
+public class Requetes {
+
+    Connection conn = null;
     
     public Requetes() {
         
     }
     
-    // Ajoute un véhicule en base.
-    public static String addVehicule(String immat, String marque, String modele) {
-        String rqt = "INSERT INTO Vehicule(immat, marque, modele) VALUES ('"+immat+"', '"+marque+"', '"+modele+"')";
-        System.out.println(rqt);
+    // Connection a la bdd
+    public Connection DBconnect() {
+    try {
+      Class.forName("org.postgresql.Driver");
+      System.out.println("Driver postgreSQL : OK.");
+
+      String url = "jdbc:postgresql://localhost:5432/GarageUtility";
+      String user = "postgres";
+      String passwd = "root";
+
+      conn = DriverManager.getConnection(url, user, passwd);
+      System.out.println("Connexion effective !");         
+         
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return conn;
+  }
+    
+    // Ajout d'un Vehicule en base
+    public Vehicule AddVehicule(String Immatriculation, String Marque, String Modele) throws SQLException {
         
-        return rqt;
+        Statement state = null;
+        
+        // Instancier classe Vehicule
+        Vehicule vehicule = new Vehicule(Immatriculation, Marque, Modele);
+        try {
+            state = this.conn.createStatement();
+            String query = vehicule.addVehicule();
+            state.executeUpdate(query);
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
     
-    // Ajoute une Piece en base.
-    public static String addPiece(String denom, int date) {
+    // Ajout d'un Client en base
+    public Client AddClient(String nom, String prenom, String adresse, String mail, String tel) {
         
-        String rqt = "INSERT INTO Piece(denom, date) VALUES('"+denom+"', '"+date+"')";
-        System.out.println(rqt);
-        
-        return rqt;
-    }
-    
-    // Ajoute un Client en base.
-    public static String addClient(String nom, String prenom, String adresse, String mail, String tel) {
-        
-        String rqt = "INSERT INTO Client(Nom, Prenom, Adresse, Mail, Telephone) VALUES('"+nom+"', '"+prenom+"', '"+adresse+"', '"+mail+"', '"+tel+"',)";
-        System.out.println(rqt);
-        return rqt;
+        //Instancier classe Client
+        Client cl = new Client(nom, prenom, adresse, mail, tel);
+        try {
+            DBconnect();
+            Statement state = null;
+            state = conn.createStatement();
+            String query = cl.addClient();
+            state.executeUpdate(query);
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
