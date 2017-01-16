@@ -16,6 +16,10 @@ public class Client {
     String adresse = null;
     String mail = null;
     String tel = null;
+   
+    public Client() {
+        
+    }
     
     public Client(String nom, String prenom, String adresse, String mail, String tel) {
         
@@ -29,6 +33,12 @@ public class Client {
     public String addClient() {
         
         String rqt = "INSERT INTO client(nom, prenom, adresse, telephone, mail) VALUES ('"+this.nom+"', '"+this.prenom+"', '"+this.adresse+"', '"+this.tel+"', '"+this.mail+"')";
+        return rqt;
+    }
+    
+    public String affClient() {
+        
+        String rqt = "SELECT * FROM public.client";
         return rqt;
     }
 }

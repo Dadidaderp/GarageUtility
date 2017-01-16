@@ -23,13 +23,14 @@ import java.sql.Statement;
 public class Requetes {
 
     Connection conn = null;
-    
+
     public Requetes() {
-        
+
     }
-    
+
     // Connection a la bdd
     public Connection DBconnect() {
+
     try {
       Class.forName("org.postgresql.Driver");
       System.out.println("Driver postgreSQL : OK.");
@@ -39,17 +40,17 @@ public class Requetes {
       String passwd = "root";
 
       conn = DriverManager.getConnection(url, user, passwd);
-      System.out.println("Connexion effective !");         
-         
+      System.out.println("Connexion effective !");
+
     } catch (Exception e) {
       e.printStackTrace();
     }
     return conn;
   }
-    
+
     // Ajout d'un Vehicule en base
     public Vehicule AddVehicule(String Immatriculation, String Marque, String Modele){
-        
+
         // Instancier classe Vehicule
         Vehicule vh = new Vehicule(Immatriculation, Marque, Modele);
         try {
@@ -71,10 +72,10 @@ public class Requetes {
                 return null;
             }
         }
-    
+
     // Ajout d'un Client en base
     public Client AddClient(String nom, String prenom, String adresse, String mail, String tel){
-        
+
         //Instancier classe Client
         Client cl = new Client(nom, prenom, adresse, mail, tel);
         try {
@@ -96,10 +97,10 @@ public class Requetes {
                 return null;
             }
         }
-    
+
     // Ajout d'une Piece en base
     public Piece AddPiece(String denom, String date){
-        
+
         //Instancier classe Piece
         Piece pc = new Piece(denom, date);
         try {
@@ -122,4 +123,31 @@ public class Requetes {
                 return null;
             }
         }
+
+    // Afficher Liste des Clients
+    public Client AffClient() {
+
+        // Instancier classe Clients
+        Client cl = new Client();
+
+        try {
+            DBconnect();
+            Statement state = null;
+            state = conn.createStatement();
+            String query = cl.affClient();
+            state.executeQuery(query);
+        } catch(SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if ( conn != null )
+                try {
+                    // Fermeture de la connexion
+                    conn.close();
+                } catch ( SQLException ignore ) {
+
+                }
+                return null;
+            }
+    }
+
 }
