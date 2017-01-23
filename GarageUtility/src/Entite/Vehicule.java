@@ -22,9 +22,19 @@ public class Vehicule {
         this.modele = modele;
     }
     
+    public Vehicule() {
+        
+    }
+    
     public String addVehicule(){
         
         String rqt = "INSERT INTO vehicule(immatriculation, marque, modele) VALUES ('"+this.immatriculation+"', '"+this.marque+"', '"+this.modele+"')";
+        return rqt;
+    }
+    
+     public String affVehicule() {
+        
+        String rqt = "SELECT * FROM public.vehicule";
         return rqt;
     }
 }

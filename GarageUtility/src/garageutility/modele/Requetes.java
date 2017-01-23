@@ -157,5 +157,22 @@ public class Requetes {
     }
     return rslt;
  }
+ 
+ public ResultSet AffVehicule() {
+     
+    ResultSet rslt;
+    try
+    {
+        Vehicule pc = new Vehicule();
+        DBconnect();
+        Statement stm = conn.createStatement();
+        rslt = stm.executeQuery(pc.affVehicule());
+    }catch(SQLException e)   
+    {
+       System.out.println(e.getMessage());
+       return null;
+    }
+    return rslt;
+ }
 
 }
