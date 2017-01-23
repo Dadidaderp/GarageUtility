@@ -124,30 +124,21 @@ public class Requetes {
             }
         }
 
-    // Afficher Liste des Clients
-    public Client AffClient() {
-
-        // Instancier classe Clients
-        Client cl = new Client();
-
-        try {
-            DBconnect();
-            Statement state = null;
-            state = conn.createStatement();
-            String query = cl.affClient();
-            state.executeQuery(query);
-        } catch(SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if ( conn != null )
-                try {
-                    // Fermeture de la connexion
-                    conn.close();
-                } catch ( SQLException ignore ) {
-
-                }
-                return null;
-            }
+ public ResultSet AffClient() {
+     
+    ResultSet rslt;
+    try
+    {
+        Client clt = new Client();
+        DBconnect();
+        Statement stm = conn.createStatement();
+        rslt = stm.executeQuery(clt.affClient());
+    }catch(SQLException e)   
+    {
+       System.out.println(e.getMessage());
+       return null;
     }
+    return rslt;
+ }
 
 }
