@@ -140,5 +140,22 @@ public class Requetes {
     }
     return rslt;
  }
+ 
+ public ResultSet AffPieces() {
+     
+    ResultSet rslt;
+    try
+    {
+        Piece pc = new Piece();
+        DBconnect();
+        Statement stm = conn.createStatement();
+        rslt = stm.executeQuery(pc.affPieces());
+    }catch(SQLException e)   
+    {
+       System.out.println(e.getMessage());
+       return null;
+    }
+    return rslt;
+ }
 
 }

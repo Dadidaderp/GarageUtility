@@ -20,9 +20,19 @@ public class Piece {
         this.datePose = datePose;
     }
     
+    public Piece() {
+        
+    }
+    
     public String addPiece(){
         
         String rqt = "INSERT INTO piece(denomination, datepose) VALUES ('"+this.denomination+"', '"+this.datePose+"')";
+        return rqt;
+    }
+    
+    public String affPieces() {
+        
+        String rqt = "SELECT * FROM public.piece";
         return rqt;
     }
 }
