@@ -19,7 +19,7 @@ import java.sql.Statement;
  * @author marclauze
  */
 
-// Classe spécifique aux requetes avec la base.
+// Classe spécifique aux requetes avec la base
 public class Requetes {
 
     Connection conn = null;
