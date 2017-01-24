@@ -124,55 +124,87 @@ public class Requetes {
             }
         }
 
+    // Méthode qui permet l'affichage de la table Client
  public ResultSet AffClient() {
      
-    ResultSet rslt;
+    ResultSet rslt; // On stock la requete ici
     try
     {
         Client clt = new Client();
         DBconnect();
         Statement stm = conn.createStatement();
+        // On exécute la requete SQL
         rslt = stm.executeQuery(clt.affClient());
     }catch(SQLException e)   
     {
        System.out.println(e.getMessage());
        return null;
     }
+    finally {
+            if ( conn != null )
+                try {
+                    // Fermeture de la connexion
+                    conn.close();
+                } catch ( SQLException ignore ) {
+
+                }
+    }
     return rslt;
  }
  
+ // Méthode qui permet l'affichage de la table Piece
  public ResultSet AffPieces() {
      
-    ResultSet rslt;
+    ResultSet rslt; // On stock la requete ici
     try
     {
         Piece pc = new Piece();
         DBconnect();
         Statement stm = conn.createStatement();
+        // On exécute la requete SQL
         rslt = stm.executeQuery(pc.affPieces());
     }catch(SQLException e)   
     {
        System.out.println(e.getMessage());
        return null;
     }
+    finally {
+            if ( conn != null )
+                try {
+                    // Fermeture de la connexion
+                    conn.close();
+                } catch ( SQLException ignore ) {
+
+                }
+    }
     return rslt;
  }
  
+ // Méthode qui permet l'affichage de la table Vehicule
  public ResultSet AffVehicule() {
      
-    ResultSet rslt;
+    ResultSet rslt; // On stock la requete ici
     try
     {
         Vehicule pc = new Vehicule();
         DBconnect();
         Statement stm = conn.createStatement();
+        // On exécute la requete SQL
         rslt = stm.executeQuery(pc.affVehicule());
     }catch(SQLException e)   
     {
        System.out.println(e.getMessage());
        return null;
     }
+    finally {
+            if ( conn != null )
+                try {
+                    // Fermeture de la connexion
+                    conn.close();
+                } catch ( SQLException ignore ) {
+
+                }
+    }
     return rslt;
  }
-
 }
