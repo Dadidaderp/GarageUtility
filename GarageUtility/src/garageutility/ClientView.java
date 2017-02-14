@@ -72,7 +72,7 @@ public class ClientView extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
-        jButton2.setText("Gérer Client");
+        jButton2.setText("Liste Clients");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -96,7 +96,7 @@ public class ClientView extends javax.swing.JFrame {
         });
 
         jButton4.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
-        jButton4.setText("Gérer Véhicule");
+        jButton4.setText("Liste Véhicules");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -104,7 +104,7 @@ public class ClientView extends javax.swing.JFrame {
         });
 
         jButton5.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
-        jButton5.setText("Gérer Pièce");
+        jButton5.setText("Liste Pièces");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
