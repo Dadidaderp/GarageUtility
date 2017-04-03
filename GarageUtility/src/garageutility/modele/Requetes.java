@@ -49,10 +49,10 @@ public class Requetes {
   }
 
     // Ajout d'un Vehicule en base
-    public Vehicule AddVehicule(String Immatriculation, String Marque, String Modele){
+    public Vehicule AddVehicule(String Immatriculation, String Marque, String Modele, String idClient){
 
         // Instancier classe Vehicule
-        Vehicule vh = new Vehicule(Immatriculation, Marque, Modele);
+        Vehicule vh = new Vehicule(Immatriculation, Marque, Modele, idClient);
         try {
             DBconnect();
             Statement state = null;

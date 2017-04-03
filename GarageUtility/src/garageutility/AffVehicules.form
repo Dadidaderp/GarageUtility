@@ -78,12 +78,12 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.table.DefaultTableModel(&#xa;data,&#xa;    new String [] {&#xa;        &quot;Immatriculation&quot;, &quot;Marque&quot;, &quot;Modele&quot;&#xa;    }&#xa;)" type="code"/>
+              <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    data,&#xa;    new String [] {&#xa;        &quot;Immatriculation&quot;, &quot;Marque&quot;, &quot;Modele&quot;, &quot;idClient&quot;&#xa;    }&#xa;)" type="code"/>
             </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="Requetes rqt = new Requetes();"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="Object[][] data ;&#xa;try&#xa;{&#xa;    ResultSet rslt;&#xa;    rslt = rqt.AffVehicule();&#xa;    int i=0;&#xa;    System.out.println(rslt.getFetchSize());&#xa;    data= new Object[20][3];&#xa;    while(rslt.next())&#xa;    {&#xa;        data[i][0]=rslt.getString(&quot;immatriculation&quot;);&#xa;        data[i][1]=rslt.getString(&quot;marque&quot;);&#xa;        data[i][2]=rslt.getString(&quot;modele&quot;);&#xa;        i++;&#xa;    }&#xa;   }catch(SQLException e)&#xa;   {&#xa;       System.out.println(e.getMessage());&#xa;       return;&#xa;   }"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="Object[][] data ;&#xa;try&#xa;{&#xa;    ResultSet rslt;&#xa;    rslt = rqt.AffVehicule();&#xa;    int i=0;&#xa;    System.out.println(rslt.getFetchSize());&#xa;    data= new Object[20][4];&#xa;    while(rslt.next())&#xa;    {&#xa;        data[i][0]=rslt.getString(&quot;immatriculation&quot;);&#xa;        data[i][1]=rslt.getString(&quot;marque&quot;);&#xa;        data[i][2]=rslt.getString(&quot;modele&quot;);&#xa;        data[i][3]=rslt.getString(&quot;idClient&quot;);&#xa;        i++;&#xa;    }&#xa;   }catch(SQLException e)&#xa;   {&#xa;       System.out.println(e.getMessage());&#xa;       return;&#xa;   }"/>
           </AuxValues>
         </Component>
       </SubComponents>

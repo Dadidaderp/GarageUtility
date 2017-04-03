@@ -50,12 +50,13 @@ public class AffVehicules extends javax.swing.JFrame {
             rslt = rqt.AffVehicule();
             int i=0;
             System.out.println(rslt.getFetchSize());
-            data= new Object[20][3];
+            data= new Object[20][4];
             while(rslt.next())
             {
                 data[i][0]=rslt.getString("immatriculation");
                 data[i][1]=rslt.getString("marque");
                 data[i][2]=rslt.getString("modele");
+                data[i][3]=rslt.getString("idClient");
                 i++;
             }
         }catch(SQLException e)
@@ -66,7 +67,7 @@ public class AffVehicules extends javax.swing.JFrame {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             data,
             new String [] {
-                "Immatriculation", "Marque", "Modele"
+                "Immatriculation", "Marque", "Modele", "idClient"
             }
         ));
         jScrollPane1.setViewportView(jTable1);

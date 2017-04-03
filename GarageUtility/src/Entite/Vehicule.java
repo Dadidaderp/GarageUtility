@@ -14,12 +14,14 @@ public class Vehicule {
     String immatriculation = null;
     String marque = null;
     String modele = null;
+    String idClient = null;
     
-    public Vehicule(String immatriculation, String marque, String modele) {
+    public Vehicule(String immatriculation, String marque, String modele, String idClient) {
         
         this.immatriculation = immatriculation;
         this.marque = marque;
         this.modele = modele;
+        this.idClient = idClient;
     }
     
     public Vehicule() {
@@ -28,7 +30,7 @@ public class Vehicule {
     
     public String addVehicule(){
         
-        String rqt = "INSERT INTO vehicule(immatriculation, marque, modele) VALUES ('"+this.immatriculation+"', '"+this.marque+"', '"+this.modele+"')";
+        String rqt = "INSERT INTO vehicule(immatriculation, marque, modele, idclient) VALUES ('"+this.immatriculation+"', '"+this.marque+"', '"+this.modele+"', '"+this.idClient+"')";
         return rqt;
     }
     
