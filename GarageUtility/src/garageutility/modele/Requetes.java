@@ -7,6 +7,9 @@ package garageutility.modele;
 
 import Entite.Client;
 import Entite.Piece;
+import Entite.Repository.ClientRepository;
+import Entite.Repository.PieceRepository;
+import Entite.Repository.VehiculeRepository;
 import Entite.Vehicule;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -53,11 +56,12 @@ public class Requetes {
 
         // Instancier classe Vehicule
         Vehicule vh = new Vehicule(Immatriculation, Marque, Modele, idClient);
+        VehiculeRepository vhr = new VehiculeRepository();
         try {
             DBconnect();
             Statement state = null;
             state = this.conn.createStatement();
-            String query = vh.addVehicule();
+            String query = vhr.addVehicule();
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();
@@ -78,11 +82,12 @@ public class Requetes {
 
         //Instancier classe Client
         Client cl = new Client(nom, prenom, adresse, mail, tel);
+        ClientRepository clr = new ClientRepository();
         try {
             DBconnect();
             Statement state = null;
             state = conn.createStatement();
-            String query = cl.addClient();
+            String query = clr.addClient();
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();
@@ -103,11 +108,12 @@ public class Requetes {
 
         //Instancier classe Piece
         Piece pc = new Piece(denom, date);
+        PieceRepository pcr = new PieceRepository();
         try {
             DBconnect();
             Statement state = null;
             state = conn.createStatement();
-            String query = pc.addPiece();
+            String query = pcr.addPiece();
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();
@@ -131,10 +137,11 @@ public class Requetes {
     try
     {
         Client clt = new Client();
+        ClientRepository clr = new ClientRepository();
         DBconnect();
         Statement stm = conn.createStatement();
         // On exécute la requete SQL
-        rslt = stm.executeQuery(clt.affClient());
+        rslt = stm.executeQuery(clr.affClient());
     }catch(SQLException e)   
     {
        System.out.println(e.getMessage());
@@ -159,10 +166,11 @@ public class Requetes {
     try
     {
         Piece pc = new Piece();
+        PieceRepository pcr = new PieceRepository();
         DBconnect();
         Statement stm = conn.createStatement();
         // On exécute la requete SQL
-        rslt = stm.executeQuery(pc.affPieces());
+        rslt = stm.executeQuery(pcr.affPieces());
     }catch(SQLException e)   
     {
        System.out.println(e.getMessage());
@@ -187,10 +195,11 @@ public class Requetes {
     try
     {
         Vehicule pc = new Vehicule();
+        VehiculeRepository vhr = new VehiculeRepository();
         DBconnect();
         Statement stm = conn.createStatement();
         // On exécute la requete SQL
-        rslt = stm.executeQuery(pc.affVehicule());
+        rslt = stm.executeQuery(vhr.affVehicule());
     }catch(SQLException e)   
     {
        System.out.println(e.getMessage());

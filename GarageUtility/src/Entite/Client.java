@@ -30,15 +30,23 @@ public class Client {
         this.tel = tel;
     }
     
-    public String addClient() {
-        
-        String rqt = "INSERT INTO client(nom, prenom, adresse, telephone, mail) VALUES ('"+this.nom+"', '"+this.prenom+"', '"+this.adresse+"', '"+this.tel+"', '"+this.mail+"')";
-        return rqt;
+    public String getNom() {
+        return this.nom;
     }
     
-    public String affClient() {
-        
-        String rqt = "SELECT * FROM public.client";
-        return rqt;
+    public String getPrenom() {
+        return this.prenom;
+    }
+    
+    public String getAdresse() {
+        return this.adresse;
+    }
+    
+    public String getMail() {
+        return this.mail;
+    }
+    
+    public String getTel() {
+        return this.tel;
     }
 }

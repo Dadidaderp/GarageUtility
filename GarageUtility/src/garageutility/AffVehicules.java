@@ -56,7 +56,7 @@ public class AffVehicules extends javax.swing.JFrame {
                 data[i][0]=rslt.getString("immatriculation");
                 data[i][1]=rslt.getString("marque");
                 data[i][2]=rslt.getString("modele");
-                data[i][3]=rslt.getString("idClient");
+                data[i][3]=rslt.getString("idclient");
                 i++;
             }
         }catch(SQLException e)

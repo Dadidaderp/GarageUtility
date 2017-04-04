@@ -83,7 +83,7 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="Requetes rqt = new Requetes();"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="Object[][] data ;&#xa;try&#xa;{&#xa;    ResultSet rslt;&#xa;    rslt = rqt.AffVehicule();&#xa;    int i=0;&#xa;    System.out.println(rslt.getFetchSize());&#xa;    data= new Object[20][4];&#xa;    while(rslt.next())&#xa;    {&#xa;        data[i][0]=rslt.getString(&quot;immatriculation&quot;);&#xa;        data[i][1]=rslt.getString(&quot;marque&quot;);&#xa;        data[i][2]=rslt.getString(&quot;modele&quot;);&#xa;        data[i][3]=rslt.getString(&quot;idClient&quot;);&#xa;        i++;&#xa;    }&#xa;   }catch(SQLException e)&#xa;   {&#xa;       System.out.println(e.getMessage());&#xa;       return;&#xa;   }"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="Object[][] data ;&#xa;try&#xa;{&#xa;    ResultSet rslt;&#xa;    rslt = rqt.AffVehicule();&#xa;    int i=0;&#xa;    System.out.println(rslt.getFetchSize());&#xa;    data= new Object[20][4];&#xa;    while(rslt.next())&#xa;    {&#xa;        data[i][0]=rslt.getString(&quot;immatriculation&quot;);&#xa;        data[i][1]=rslt.getString(&quot;marque&quot;);&#xa;        data[i][2]=rslt.getString(&quot;modele&quot;);&#xa;        data[i][3]=rslt.getString(&quot;idclient&quot;);&#xa;        i++;&#xa;    }&#xa;   }catch(SQLException e)&#xa;   {&#xa;       System.out.println(e.getMessage());&#xa;       return;&#xa;   }"/>
           </AuxValues>
         </Component>
       </SubComponents>

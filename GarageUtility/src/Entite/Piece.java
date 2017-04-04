@@ -24,15 +24,12 @@ public class Piece {
         
     }
     
-    public String addPiece(){
-        
-        String rqt = "INSERT INTO piece(denomination, datepose) VALUES ('"+this.denomination+"', '"+this.datePose+"')";
-        return rqt;
+    public String getDenom() {
+        return this.denomination;
     }
     
-    public String affPieces() {
-        
-        String rqt = "SELECT * FROM public.piece";
-        return rqt;
+    public String getDate() {
+        return this.datePose;
     }
+    
 }

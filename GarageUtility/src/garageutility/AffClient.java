@@ -114,14 +114,15 @@ public class AffClient extends javax.swing.JFrame {
             rslt = rqt.AffClient();
             int i=0;
             System.out.println(rslt.getFetchSize());
-            data= new Object[20][5];
+            data= new Object[20][6];
             while(rslt.next())
             {
-                data[i][0]=rslt.getString("nom");
-                data[i][1]=rslt.getString("prenom");
-                data[i][2]=rslt.getString("adresse");
-                data[i][3]=rslt.getString("mail");
-                data[i][4]=rslt.getString("telephone");
+                data[i][0]=rslt.getString("id");
+                data[i][1]=rslt.getString("nom");
+                data[i][2]=rslt.getString("prenom");
+                data[i][3]=rslt.getString("adresse");
+                data[i][4]=rslt.getString("mail");
+                data[i][5]=rslt.getString("telephone");
                 i++;
             }
         }catch(SQLException e)
@@ -132,7 +133,7 @@ public class AffClient extends javax.swing.JFrame {
         jTableClient.setModel(new javax.swing.table.DefaultTableModel(
             data,
             new String [] {
-                "Nom", "Prenom", "Adresse", "Mail", "Telephone"
+                "ID", "Nom", "Prenom", "Adresse", "Mail", "Telephone"
             }
         ));
         jScrollPane1.setViewportView(jTableClient);

@@ -28,15 +28,19 @@ public class Vehicule {
         
     }
     
-    public String addVehicule(){
-        
-        String rqt = "INSERT INTO vehicule(immatriculation, marque, modele, idclient) VALUES ('"+this.immatriculation+"', '"+this.marque+"', '"+this.modele+"', '"+this.idClient+"')";
-        return rqt;
+    public String getImmat() {
+        return this.immatriculation;
     }
     
-     public String affVehicule() {
-        
-        String rqt = "SELECT * FROM public.vehicule";
-        return rqt;
+    public String getMarque() {
+        return this.marque;
+    }
+    
+    public String getModele() {
+        return this.modele;
+    }
+    
+    public String getIdClient() {
+        return this.idClient;
     }
 }
