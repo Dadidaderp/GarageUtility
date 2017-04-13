@@ -67,3 +67,17 @@ CREATE DATABASE "GarageUtility"
        COMMENT ON COLUMN public.client.adresse IS 'Adresse du client.';
        COMMENT ON COLUMN public.client.telephone IS 'Téléphone du client.';
        COMMENT ON COLUMN public.client.mail IS 'Mail du client.';
+
+       -- Table: public.reparation
+       -- DROP TABLE public.reparation;
+       CREATE TABLE public.reparation
+       (
+         id integer NOT NULL DEFAULT nextval('"Reparation_ID_seq"'::regclass),
+         datereparation date NOT NULL, 
+         fk_vehicule integer NOT NULL REFERENCES vehicule, --clé étrangère vers le véhicule.
+         fk_piece integer NOT NULL REFERENCES piece, -- clé étrangère vers la pièce.
+         CONSTRAINT "Reparation_pkey" PRIMARY KEY (id)
+       )
+       WITH (
+         OIDS=TRUE
+       );

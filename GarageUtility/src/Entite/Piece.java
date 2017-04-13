@@ -11,8 +11,8 @@ package Entite;
  */
 public class Piece {
     
-    String denomination = null;
-    String datePose = null;
+    private String denomination = null;
+    private String datePose = null;
     
     public Piece(String denomination, String datePose) {
         

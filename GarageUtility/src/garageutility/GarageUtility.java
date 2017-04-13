@@ -5,7 +5,6 @@
  */
 package garageutility;
 
-import garageutility.modele.Requetes;
 
 /**
  *
