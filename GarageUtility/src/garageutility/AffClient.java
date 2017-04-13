@@ -62,7 +62,7 @@ import java.sql.Statement;
  */
 public class AffClient extends javax.swing.JFrame {
     String  [] title={"id","nom", "prenom","mail"};
-    Object [][] obj=new Object[10][4];
+    Object [][] obj=new Object[100][4];
     /**
      * Creates new form Edition
      */
@@ -114,7 +114,7 @@ public class AffClient extends javax.swing.JFrame {
             rslt = rqt.AffClient();
             int i=0;
             System.out.println(rslt.getFetchSize());
-            data= new Object[20][6];
+            data= new Object[100][6];
             while(rslt.next())
             {
                 data[i][0]=rslt.getString("id");
