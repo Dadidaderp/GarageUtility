@@ -58,7 +58,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author Emna
+ * @author marclauze
  */
 public class AffClient extends javax.swing.JFrame {
     String  [] title={"id","nom", "prenom","mail"};
