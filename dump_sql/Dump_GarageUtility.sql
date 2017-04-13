@@ -73,7 +73,7 @@ CREATE DATABASE "GarageUtility"
        CREATE TABLE public.reparation
        (
          id integer NOT NULL DEFAULT nextval('"Reparation_ID_seq"'::regclass),
-         datereparation date NOT NULL, 
+         datereparation date NOT NULL,
          fk_vehicule integer NOT NULL REFERENCES vehicule, --clé étrangère vers le véhicule.
          fk_piece integer NOT NULL REFERENCES piece, -- clé étrangère vers la pièce.
          CONSTRAINT "Reparation_pkey" PRIMARY KEY (id)
