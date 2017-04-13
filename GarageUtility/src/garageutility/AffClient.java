@@ -51,10 +51,9 @@ choose License Headers in Project Properties.
 package garageutility;
 
 import garageutility.modele.Requetes;
-import java.sql.Connection;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  *

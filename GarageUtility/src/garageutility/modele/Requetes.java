@@ -11,11 +11,8 @@ import Entite.Repository.ClientRepository;
 import Entite.Repository.PieceRepository;
 import Entite.Repository.VehiculeRepository;
 import Entite.Vehicule;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
 
 /**
  *
