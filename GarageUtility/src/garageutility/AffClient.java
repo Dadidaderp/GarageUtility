@@ -113,15 +113,15 @@ public class AffClient extends javax.swing.JFrame {
             rslt = rqt.AffClient();
             int i=0;
             System.out.println(rslt.getFetchSize());
-            data= new Object[100][6];
+            data= new Object[100][5];
             while(rslt.next())
             {
-                data[i][0]=rslt.getString("id");
-                data[i][1]=rslt.getString("nom");
-                data[i][2]=rslt.getString("prenom");
-                data[i][3]=rslt.getString("adresse");
-                data[i][4]=rslt.getString("mail");
-                data[i][5]=rslt.getString("telephone");
+                //data[i][0]=rslt.getString("id");
+                data[i][0]=rslt.getString("nom");
+                data[i][1]=rslt.getString("prenom");
+                data[i][2]=rslt.getString("adresse");
+                data[i][3]=rslt.getString("mail");
+                data[i][4]=rslt.getString("telephone");
                 i++;
             }
         }catch(SQLException e)

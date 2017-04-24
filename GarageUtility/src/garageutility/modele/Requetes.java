@@ -49,16 +49,16 @@ public class Requetes {
   }
 
     // Ajout d'un Vehicule en base
-    public Vehicule AddVehicule(String Immatriculation, String Marque, String Modele, String idClient){
+    public Vehicule AddVehicule(String Immatriculation, String Marque, String Modele){
 
         // Instancier classe Vehicule
-        Vehicule vh = new Vehicule(Immatriculation, Marque, Modele, idClient);
+        Vehicule vh = new Vehicule(Immatriculation, Marque, Modele);
         VehiculeRepository vhr = new VehiculeRepository();
         try {
             DBconnect();
             Statement state = null;
             state = this.conn.createStatement();
-            String query = vhr.addVehicule();
+            String query = vhr.addVehicule(Immatriculation, Marque, Modele);
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();
@@ -84,7 +84,7 @@ public class Requetes {
             DBconnect();
             Statement state = null;
             state = conn.createStatement();
-            String query = clr.addClient();
+            String query = clr.addClient(nom, prenom, adresse, mail, tel);
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();
@@ -110,7 +110,7 @@ public class Requetes {
             DBconnect();
             Statement state = null;
             state = conn.createStatement();
-            String query = pcr.addPiece();
+            String query = pcr.addPiece(denom, date);
             state.executeUpdate(query);
         } catch(SQLException e) {
             e.printStackTrace();

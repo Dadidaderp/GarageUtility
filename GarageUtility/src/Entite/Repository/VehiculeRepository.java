@@ -17,10 +17,9 @@ public class VehiculeRepository {
         
     }
     
-    public String addVehicule(){
-        
-        Vehicule vh = new Vehicule();
-        String rqt = "INSERT INTO vehicule(immatriculation, marque, modele, idclient) VALUES ('"+vh.getImmat()+"', '"+vh.getMarque()+"', '"+vh.getModele()+"', '"+vh.getIdClient()+"')";
+    public String addVehicule(String immat, String marque, String modele){
+
+        String rqt = "INSERT INTO vehicule(immatriculation, marque, modele) VALUES ('"+immat+"', '"+marque+"', '"+modele+"')";
         return rqt;
     }
     

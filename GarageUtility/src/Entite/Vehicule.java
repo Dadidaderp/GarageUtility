@@ -14,14 +14,12 @@ public class Vehicule {
     String immatriculation = null;
     String marque = null;
     String modele = null;
-    String idClient = null;
     
-    public Vehicule(String immatriculation, String marque, String modele, String idClient) {
+    public Vehicule(String immatriculation, String marque, String modele) {
         
         this.immatriculation = immatriculation;
         this.marque = marque;
         this.modele = modele;
-        this.idClient = idClient;
     }
     
     public Vehicule() {
@@ -39,8 +37,5 @@ public class Vehicule {
     public String getModele() {
         return this.modele;
     }
-    
-    public String getIdClient() {
-        return this.idClient;
-    }
+
 }

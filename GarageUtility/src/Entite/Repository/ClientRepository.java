@@ -17,10 +17,9 @@ public class ClientRepository {
         
     }
     
-    public String addClient() {
-        
-        Client cl = new Client();
-        String rqt = "INSERT INTO client(nom, prenom, adresse, telephone, mail) VALUES ('"+cl.getNom()+"', '"+cl.getPrenom()+"', '"+cl.getAdresse()+"', '"+cl.getTel()+"', '"+cl.getMail()+"')";
+    public String addClient(String nom, String prenom, String adresse, String telephone, String mail) {
+
+        String rqt = "INSERT INTO client(nom, prenom, adresse, telephone, mail) VALUES ('"+nom+"', '"+prenom+"', '"+adresse+"', '"+telephone+"', '"+mail+"')";
         return rqt;
     }
     

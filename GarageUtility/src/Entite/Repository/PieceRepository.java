@@ -17,10 +17,9 @@ public class PieceRepository {
         
     }
     
-    public String addPiece(){
-        
-        Piece pl = new Piece();
-        String rqt = "INSERT INTO piece(denomination, datepose) VALUES ('"+pl.getDenom()+"', '"+pl.getDate()+"')";
+    public String addPiece(String denom, String date) {
+
+        String rqt = "INSERT INTO piece(denomination, datepose) VALUES ('"+denom+"', '"+date+"')";
         return rqt;
     }
     
