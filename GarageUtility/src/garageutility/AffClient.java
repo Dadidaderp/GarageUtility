@@ -132,7 +132,7 @@ public class AffClient extends javax.swing.JFrame {
         jTableClient.setModel(new javax.swing.table.DefaultTableModel(
             data,
             new String [] {
-                "ID", "Nom", "Prenom", "Adresse", "Mail", "Telephone"
+                "Nom", "Prenom", "Adresse", "Mail", "Telephone"
             }
         ));
         jScrollPane1.setViewportView(jTableClient);
